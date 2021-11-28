@@ -90,7 +90,7 @@ class IoTHospitalContract extends Contract {
         }
 
         if (asset.isRejected()) {
-            throw new Error('Asset is already rejected');
+            throw new Error('Asset is rejected');
         }
 
         
@@ -105,7 +105,33 @@ class IoTHospitalContract extends Contract {
         console.info('============= END : Approve Asset ===========');
     }
 
-    
+    async rejectAsset(ctx, assetId, doctorID) {
+        console.info('============= START : Reject Asset ===========');
+
+        let asset = Asset.makeKey([assetId]);
+
+        if (!ctx.assetList.exists(asset)) {
+            throw new Error('Asset does not exist');
+        }
+        if (asset.doctorID !== doctorID) {
+            throw new Error('This doctor cannot approve this asset');
+        }
+
+        if (asset.isRejected()) {
+            throw new Error('Asset is already rejected');
+        }
+
+        
+        if (asset.isCreated()) {
+            asset.setState(assetState.REJECTED);
+        }
+
+        await ctx.assetList.updateAsset(asset);
+
+        return asset;
+
+        console.info('============= END : Reject Asset ===========');
+    }
 
 }
 
