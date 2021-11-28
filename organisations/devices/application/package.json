@@ -1,0 +1,19 @@
+{
+  "name": "device-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sehejjain/iot_blockchain_hospitals.git"
+  },
+  "author": "sehej",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sehejjain/iot_blockchain_hospitals/issues"
+  },
+  "homepage": "https://github.com/sehejjain/iot_blockchain_hospitals#readme"
+}
