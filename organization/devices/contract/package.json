@@ -15,9 +15,10 @@
     "url": "git+https://github.com/sehejjain/iot_blockchain_hospitals.git"
   },
   "engines": {
-    "node": ">=12",
+    "node": ">=8",
     "npm": ">=5"
   },
+  "engineStrict": true,
   "author": "Sehej",
   "license": "ISC",
   "dependencies": {
@@ -37,5 +38,21 @@
   "bugs": {
     "url": "https://github.com/sehejjain/iot_blockchain_hospitals/issues"
   },
-  "homepage": "https://github.com/sehejjain/iot_blockchain_hospitals#readme"
+  "homepage": "https://github.com/sehejjain/iot_blockchain_hospitals#readme",
+  "nyc": {
+    "exclude": [
+      "coverage/**",
+      "test/**"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "all": true,
+    "check-coverage": true,
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  }
 }
