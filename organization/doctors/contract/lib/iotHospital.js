@@ -4,7 +4,7 @@
 const stringify = require('json-stringify-deterministic');
 const sortKeysRecursive = require('sort-keys-recursive');
 const {
-    Contract
+    Contract, Context
 } = require('fabric-contract-api');
 const Asset = require('./asset.js');
 const AssetList = require('./assetList.js');
@@ -58,12 +58,14 @@ class IoTHospitalContract extends Contract {
     async createAsset(ctx, patientId, assetType, assetName, doctorID) {
         console.info('============= START : Create Asset ===========');
 
-        let asset = new Asset.createInstance(assetName, assetType, patientId);
+        let asset = Asset.createInstance(assetName, assetType, patientId);
 
         let mspid = ctx.clientIdentity.getMSPID();
         asset.setOwnerMSP(mspid);
         
         asset.setDoctorID(doctorID);
+
+        console.info('============= START : Saving Asset ===========');
 
         await ctx.assetList.addAsset(asset);
 

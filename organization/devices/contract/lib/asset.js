@@ -14,13 +14,8 @@ const assetState = {
 
 class Asset extends State {
     constructor(obj) {
-        super(obj);
-        this.assetId = obj.assetId;
-        this.assetName = obj.assetName;
-        this.assetType = obj.assetType;
-        this.assetState = obj.assetState;
-        this.patientID = obj.patientID;
-        // this.doctorID = doctorID;
+        super(Asset.getClass(), [obj.assetId, obj.assetName, obj.assetType, obj.assetState, obj.patientID, obj.doctorID]);
+
     }
 
     setOwnerMSP(mspid) {
@@ -103,6 +98,9 @@ class Asset extends State {
     }
     isRedo() {
         return this.assetState === assetState.REDO;
+    }
+    static getClass() {
+        return 'org.hospitalnet.asset';
     }
 }
 
