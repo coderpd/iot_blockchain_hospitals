@@ -4,7 +4,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const { Wallets, Gateway } = require('fabric-network');
-const CommercialPaper = require('../../devices/contract/lib/asset.js');
+const Asset = require('../../contract/lib/asset.js');
 
 
 // Main program function
@@ -53,12 +53,12 @@ async function main () {
         // console.log(contract)
         console.log('Submit create asset transaction.');
 
-        const createResponse = await contract.submitTransaction('createAsset', '124', 'CAT', 'PatientScan', 'A001');
+        const createResponse = await contract.submitTransaction('createAsset', '1', 'P001', 1, 'Patient Report', 'D001');
 
         // process response
         console.log('Process buy transaction response.');
 
-        let paper = CommercialPaper.fromBuffer(createResponse);
+        let paper = Asset.fromBuffer(createResponse);
 
         console.log(`${paper.issuer} commercial paper : ${paper.paperNumber} successfully purchased by ${paper.owner}`);
         console.log('Transaction complete.');

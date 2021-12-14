@@ -4,3 +4,7 @@ cp.tar.gz
 # **/gateway/connection-org2.yaml
 
 **/node_modules/
+
+**/.DS_Store
+
+**/wallet/*
