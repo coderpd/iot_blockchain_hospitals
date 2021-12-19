@@ -1,0 +1,37 @@
+export const assets = [{
+    "assetName": "A001",
+    "assetType": "0",
+    "doctorID": "D001",
+    "patientID": "P001",
+    "path": "*/a.pdf"
+}, {
+    "assetName": "A002",
+    "assetType": "0",
+    "doctorID": "D001",
+    "patientID": "P002",
+    "path": "*/a.pdf"
+}, {
+    "assetName": "A003",
+    "assetType": "0",
+    "doctorID": "D002",
+    "patientID": "P004",
+    "path": "*/a.pdf"
+}, {
+    "assetName": "A004",
+    "assetType": "0",
+    "doctorID": "D004",
+    "patientID": "P001",
+    "path": "*/a.pdf"
+}, {
+    "assetName": "A005",
+    "assetType": "0",
+    "doctorID": "D002",
+    "patientID": "P04",
+    "path": "*/a.pdf"
+}, {
+    "assetName": "A006",
+    "assetType": "0",
+    "doctorID": "D001",
+    "patientID": "P003",
+    "path": "*/a.pdf"
+}]
